@@ -4,7 +4,7 @@
 
 [▶ Play Aurora Pilot](https://siddhant-pardeshi.github.io/aurora-pilot/) — free, no install, no login. Phones and desktops.
 
-![Aurora Pilot at dawn](docs/media/gameplay.png)
+![Aurora Pilot at dawn](docs/media/gameplay.gif)
 
 ## The pitch
 
@@ -51,6 +51,10 @@ One shared game kit, zero downloaded assets: four full sky palettes crossfade ov
 python -m http.server 8000
 # open http://localhost:8000
 ```
+
+## About
+
+**Made by Siddhant Pardeshi.** Part of [The Game Deck](https://siddhant-pardeshi.github.io/game-deck/) — six handcrafted worlds on one shared game kit, each with its own curriculum woven into the mechanics.
 
 ## License
 
