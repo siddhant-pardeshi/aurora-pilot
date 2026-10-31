@@ -14,7 +14,7 @@ It is a game about smoothness. No shooting, no timers — just you, the light, a
 
 ## Flight briefings: learn how the internet moves
 
-Each sky you cross is a **layer of the network**. When the light shifts, Skye hands you a flight briefing — a quick concept card about the layer you just flew (DNS, TCP, TLS, CDN, why 503 means what it means). A correct briefing is worth +250, and every concept is tracked in the menu's **Concepts** codex. Briefings pause the flight; skip is always one tap away.
+Each sky you cross is a **layer of the network**. When the light shifts, Skye hands you a flight briefing — a quick concept card about the layer you just flew (DNS, TCP, TLS, CDN, why 503 means what it means). A correct briefing is worth +250, refills +25 fuel, and **insures your ring streak** (the next missed ring won't reset it). A missed briefing drains -20 fuel — and fuel is life up here. Every concept is tracked in the menu's **Concepts** codex. Briefings pause the flight; skip is always one tap away.
 
 ## Controls
 

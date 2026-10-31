@@ -74,7 +74,7 @@
   let state = 'attract';
   let camX = 0, alt = 520, vy = 0, speed = 0;
   let fuel = 100, hull = 3, engineCut = false, invuln = 0;
-  let score = 0, ringsGot = 0, streak = 0, closeCalls = 0;
+  let score = 0, ringsGot = 0, streak = 0, closeCalls = 0, streakShield = false;
   let stageIdx = 0, stageT = 0;
   let palFrom = null, palToIdx = 0, blend = 1;
   let totalDist = 0;
@@ -317,7 +317,17 @@
               onOpen: () => G.pause(),
               onClose: () => { if (Kit.screens.active() === 'hud' && (state === 'race' || state === 'flight')) G.resume(); }
             }).then(ok => {
-              if (ok) { score += 250; Kit.toast('+250 — briefing aced'); }
+              if (ok) {
+                score += 250;
+                fuel = Math.min(100, fuel + 25);
+                streakShield = true;
+                Kit.toast('Briefing aced — +250, +fuel, streak insured');
+              } else {
+                fuel = Math.max(8, fuel - 20);
+                G.shake(5);
+                Audio.sfx('fail');
+                Kit.toast('Missed briefing — the tank took a hit (-20 fuel)');
+              }
             });
           }
         }
@@ -413,7 +423,11 @@
       if (flying) {
         if (e.kind === 'ring' && !e.got) {
           if (dx < 34 && dx > -70 && Math.abs(e.alt - alt) < RING_R * 0.92) collectRing(e);
-          else if (dx <= -70) { e.got = true; streak = 0; }
+          else if (dx <= -70) {
+            e.got = true;
+            if (streakShield) { streakShield = false; Kit.toast('Streak insured — the shield took the miss'); }
+            else streak = 0;
+          }
         } else if ((e.kind === 'rock' || e.kind === 'pillar' || e.kind === 'slab') && !e.hitDone) {
           if (invuln <= 0 && Math.abs(dx) < e.hw + PLANE_HW) {
             const lo = (e.kind === 'pillar' ? 0 : e.lo) - PLANE_HH;
