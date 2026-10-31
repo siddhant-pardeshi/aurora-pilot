@@ -1,0 +1,36 @@
+/* Aurora Pilot theme — dawn canyon: gold sun, sky-blue trim, deep indigo base */
+:root {
+  --acc: #FFD08A;
+  --acc2: #8AD4FF;
+  --ink: #F4F0E6;
+  --dim: #A8B4CE;
+  --bg: #101828;
+  --panel: rgba(13, 19, 34, .86);
+  --font: 'Trebuchet MS', 'Segoe UI', system-ui, sans-serif;
+}
+
+/* the menu title gets a two-tone dawn look */
+h1.title { color: #fff; }
+h1.title em {
+  background: linear-gradient(120deg, #FFD08A, #FF9E6E 55%, #8AD4FF);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* HUD readouts */
+#hud .speed-chip b { font-size: 20px; color: #FFD08A; letter-spacing: .02em; }
+#hud .fuel-meter i { background: linear-gradient(90deg, #FFD08A, #8AD4FF); }
+#hud .streak-chip .acc { color: #FFD08A; }
+
+/* logo pulse on the top bar */
+.topbar .brand { color: #FFD08A; }
+
+/* menu floats over the live attract-mode scene */
+[data-screen="menu"], [data-screen="pause"], [data-screen="results"] {
+  background: linear-gradient(180deg, rgba(16,24,40,.86), rgba(40,30,52,.72));
+  backdrop-filter: blur(3px);
+}
+
+/* keep the streak chip clear of the plane */
+#hud .hud-top { flex-wrap: wrap; }
