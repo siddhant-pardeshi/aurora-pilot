@@ -37,6 +37,10 @@ The character in the corner is Skye — warm voice on the intercom. She greets y
 
 Volume sliders and mute (`M`), quality tiers, reduced motion, camera-shake toggle, hideable mascot, fullscreen, keyboard-playable menus, touch targets ≥ 44px. Fully playable muted.
 
+## Privacy
+
+No accounts, no cookies, no analytics, no tracking — nothing leaves your device. Progress and settings live in your browser's localStorage and can be wiped anytime from Settings. Full details: [SECURITY.md](SECURITY.md) and the deck-wide [privacy statement](https://github.com/siddhant-pardeshi/game-deck/blob/main/PRIVACY.md).
+
 ## Under the hood
 
 One shared game kit, zero downloaded assets: four full sky palettes crossfade over parallax canyon layers, the plane is drawn vector geometry with bank animation, and the soundtrack — airy pads, warm arps, wind — is synthesized live with WebAudio. Personal best lives in localStorage.
